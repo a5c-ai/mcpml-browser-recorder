@@ -1,0 +1,11 @@
+id: mcpml-browser-recorder
+title: MCPML Browser Recorder
+description: MCPML Browser Recorder
+githubUrl: https://github.com/a5c-ai/mcpml-browser-recorder
+projectUrl: https://github.com/a5c-ai/mcpml-browser-recorder/projects
+tags:
+  - open source
+  - developer
+  - mcp
+azure:
+  deployUrl: https://github.com/a5c-ai/mcpml-browser-recorder
