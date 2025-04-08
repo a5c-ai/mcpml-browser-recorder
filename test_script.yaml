@@ -1,0 +1,25 @@
+- action: goto
+  params:
+    url: "https://google.com/"
+- action: wait
+  params:
+    seconds: 2
+- action: screenshot
+  params:
+    path: "session_output/google_home.png" # Note: This path is relative to the page context, not output_path
+- action: fill
+  params:
+    selector: "input[name='q']"
+    value: "google"
+- action: wait
+  params:
+    seconds: 1
+- action: click
+  params:
+    selector: "button[type='submit']" # Selector for Google Search button (might vary)
+- action: wait
+  params:
+    seconds: 3 # Wait for search results
+- action: screenshot
+  params:
+    path: "session_output/google_search.png"

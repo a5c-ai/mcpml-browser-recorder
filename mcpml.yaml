@@ -1,0 +1,42 @@
+name: "Browser Recorder"
+settings:
+  server:
+    host: "0.0.0.0"
+    port: 8000
+  log_level: "ERROR"
+mcpServers: 
+  - name: playwright-mcp-server
+    command: "npx"
+    args: 
+      - "-y"
+      - "@executeautomation/playwright-mcp-server"
+    description: "Playwright MCP Server"    
+  - name: filesystem-mcp-server
+    command: "npx"
+    args: 
+      - "-y"
+      - "@modelcontextprotocol/server-filesystem"      
+      - "/"
+    description: "Filesystem MCP Server"
+tools:
+  - name: pwd
+    type: function
+    implementation: functions.pwd
+    description: Returns the current working directory
+  - name: record_session_agent
+    type: agent
+    model: "gpt-4o-mini"
+    description: Records a browsing session based on a script.
+    instructions: |
+      You are a tool that records a browsing session based on a script.
+      The script is a YAML file that defines the browsing actions. including when to wait, navigate to a url, take snapshots, read state from the page, and fill in form fields.      
+      Save the files in the $PWD/session_output directory
+    mcp_servers: 
+      - playwright-mcp-server
+      - filesystem-mcp-server
+    tools:
+      - pwd
+  - name: record_session
+    type: function
+    implementation: functions.record_session
+    description: Records a browsing session based on a script.

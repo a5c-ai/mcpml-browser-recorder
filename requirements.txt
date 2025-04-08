@@ -1,0 +1,3 @@
+git+https://github.com/a5c-ai/mcpml#egg=mcpml
+playwright
+PyYAML
