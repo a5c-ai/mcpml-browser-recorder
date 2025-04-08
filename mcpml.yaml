@@ -36,7 +36,3 @@ tools:
       - filesystem-mcp-server
     tools:
       - pwd
-  - name: record_session
-    type: function
-    implementation: functions.record_session
-    description: Records a browsing session based on a script.
